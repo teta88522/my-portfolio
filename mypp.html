@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신재성 | 메타버스AI </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--dark);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-badge {
+            transition: all 0.2s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: scale(1.05);
+        }
+        
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid var(--primary);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 2px;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="gradient-bg text-white p-2 rounded-lg">
+                        <i class="fas fa-robot text-xl"></i>
+                    </div>
+                    <span class="font-semibold text-gray-900 text-lg">신재성 포트폴리오</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 transition">소개</a>
+                    <a href="#skills" class="text-gray-700 hover:text-indigo-600 transition">기술</a>
+                    <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition">프로젝트</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-indigo-600 transition">갤러리</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2 focus:outline-none">
+                        <i class="fas fa-bars text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center mb-6">
+                <div class="w-32 h-32 rounded-full bg-white flex items-center justify-center shadow-xl">
+                    <i class="fas fa-user-tie text-5xl gradient-text" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">신재성</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-6 typewriter">AI 분야 </h2>
+            <p class="text-xl max-w-2xl mx-auto mb-8">이미지 생성과 LLM 분야에 특화된 AI 개발자</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">프로젝트 보기</a>
+                <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-indigo-600 transition">연락하기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">🙋‍♂️ 자기 소개</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">AI 국비수업 수료 중</h3>
+                        <p class="text-gray-600 mb-6">
+                            저는 현재 AI 국비수업을 수료 중이며, 파이썬 프로그래밍과 딥러닝, LLM(대형 언어 모델) 등 다양한 AI 기술을 배우고 있습니다.
+                            특히 이미지 생성과 자연어 처리 분야에 깊은 관심을 가지고 연구하고 있습니다.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">AI 개발자</div>
+                            <div class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">이미지 생성</div>
+                            <div class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">LLM 전문가</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">📊 프로젝트 경험</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">AI 프로젝트</span>
+                                    <span class="text-indigo-600 font-bold">3회 완료 🎯🎯🎯</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">미드나잇 프로젝트</span>
+                                    <span class="text-purple-600 font-bold">1회 완료 🌙</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-purple-600 h-2.5 rounded-full" style="width: 33%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-gray-600">
+                            다양한 프로젝트를 통해 실무 경험을 쌓았으며, 특히 미드나잇 프로젝트에서는 야간에도 열정적으로 작업하며 문제 해결 능력을 키웠습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">🚀 활용 가능한 AI 기술</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Python -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4 text-blue-500">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Python</h3>
+                    <p class="text-gray-600">데이터 분석, 머신러닝, 딥러닝 구현</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ComfyUI -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4 text-purple-500">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">ComfyUI</h3>
+                    <p class="text-gray-600">이미지 생성 및 편집 도구 활용</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FastAPI -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4 text-green-500">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">FastAPI</h3>
+                    <p class="text-gray-600">고성능 API 개발 및 배포</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- LangChain -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4 text-yellow-500">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">LangChain</h3>
+                    <p class="text-gray-600">LLM 애플리케이션 개발 프레임워크</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-yellow-500 h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white p-8 rounded-xl shadow-md">
+                <h3 class="text-2xl font-semibold mb-6 text-center">교육 과정</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="border-l-4 border-indigo-500 pl-4">
+                        <h4 class="text-lg font-medium mb-2">파이썬 프로그래밍</h4>
+                        <p class="text-gray-600">데이터 수집 및 시각화</p>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <h4 class="text-lg font-medium mb-2">딥러닝</h4>
+                        <p class="text-gray-600">신경망 구조 및 최신 모델 구현</p>
+                    </div>
+                    <div class="border-l-4 border-purple-500 pl-4">
+                        <h4 class="text-lg font-medium mb-2">LLM (대형 언어 모델)</h4>
+                        <p class="text-gray-600">agent 기능 및 로컬화 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">📁 주요 프로젝트</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-project-diagram text-6xl text-white opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2"> 글로벌 음악스트리밍 테이터 분석</h3>
+                        <p class="text-gray-600 mb-4">정보를 데이터 프레임화 한후 시각화.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs">Python</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Deep Learning</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">AI</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-semibold mb-2 text-white">글로벌 음악스트리밍 테이터 분석</h3>
+                        <p class="text-white mb-4 px-4 text-center">음악의 길이 장르 등에 따른 차이.</p>
+                        <a href="https://mtvs.kr/user/project/view?bbsCd=BBS_00007&bbscCd=BBSC_01377" class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition">자세히 보기</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-teal-400 flex items-center justify-center">
+                        <i class="fas fa-robot text-6xl text-white opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2"> 정치 만족도 평가 프로젝트</h3>
+                        <p class="text-gray-600 mb-4">머신러닝을 이용한 예측.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">LLM</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">LangChain</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">NLP</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-semibold mb-2 text-white">정치 만족도 평가 프로젝트</h3>
+                        <p class="text-white mb-4 px-4 text-center">사람들의 정치 만족도를 예측</p>
+                        <a href="https://mtvs.kr/user/project/view?bbsCd=BBS_00007&bbscCd=BBSC_01378" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition">자세히 보기</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                        <i class="fas fa-image text-6xl text-white opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2"> 동화속으로</h3>
+                        <p class="text-gray-600 mb-4">open-cv,comfyui,fastapi등 종합적인 ai기술을 조합한 프로젝트</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">ComfyUI</span>
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-xs">Image Generation</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs">GAN</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-semibold mb-2 text-white"> 동화속으로</h3>
+                        <p class="text-white mb-4 px-4 text-center">인터렉티브 동화의 진화를 꿈꾸다.</p>
+                        <a href="https://mtvs.kr/user/project/view?bbsCd=BBS_00007&bbscCd=BBSC_01431" class="bg-white text-purple-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition">자세히 보기</a>
+                    </div>
+                </div>
+                
+                <!-- Midnight Project -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-gray-800 to-gray-600 flex items-center justify-center">
+                        <i class="fas fa-moon text-6xl text-white opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">미드나잇 프로젝트</h3>
+                        <p class="text-gray-600 mb-4">코딩 블록 게임 (프롬프트 텍스처 생성 및 api 서버 연결)</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs">Night Coding</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">FastAPI</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Challenge</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="text-xl font-semibold mb-2 text-white">미드나잇 프로젝트</h3>
+                        <p class="text-white mb-4 px-4 text-center">야간에도 열정적으로 진행한 특별 프로젝트입니다.</p>
+                        <a href="https://www.notion.so/ppt-1fce16d5b4e480259446ff630e5acab7?pvs=4" class="bg-white text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <a href="https://www.notion.so/ppt-1fce16d5b4e480259446ff630e5acab7?pvs=4" class="bg-white text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="inline-block text-3xl font-bold text-gray-900 hover:text-indigo-600 transition-colors">
+      🖼️ 포트폴리오 이미지
+    </a>
+  </div>
+</section>
+                        
+                        <div class="mt-8">
+                            <div class="flex space-x-4">
+                                <a href="#"w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text
+</html>
